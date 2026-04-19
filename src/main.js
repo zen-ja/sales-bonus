@@ -108,7 +108,7 @@ function analyzeSalesData(data, options) {
         });
     });
     // Сортировка продавцов по прибыли
-    const sortedSellers = sellerStats.toSorted((a, b) => -1 * (a.profit - b.profit));
+    const sortedSellers = [...sellerStats].sort((a, b) => b.profit - a.profit);
 
     // Назначение премий на основе ранжирования
     sortedSellers.forEach((seller, index) => {
